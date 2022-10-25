@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 export const usePersistedState = (key: string, initialState: any) => {
   const [state, setState] = useState(() => {
-    useEffect(() => {
-      if (typeof window !== "undefined") {
+    if (typeof window !== "undefined") {
+      useEffect(() => {
         const storageValue = localStorage.getItem(key);
 
         if (storageValue) {
@@ -13,8 +13,8 @@ export const usePersistedState = (key: string, initialState: any) => {
         }
 
         localStorage.setItem(key, JSON.stringify(state));
-      }
-    }, []);
+      }, []);
+    }
   });
 
   return [state, setState];

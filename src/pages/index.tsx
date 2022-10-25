@@ -16,14 +16,14 @@ const Home: NextPage = () => {
   return (
     <>
       <h1>Hey</h1>
-      <p>{state}</p>
+      {/* <p>{state}</p>
       <button
         onClick={() => {
           state === "dark" ? setState("light") : setState("dark");
         }}
       >
         Toggle Theme
-      </button>
+      </button> */}
     </>
   );
 };

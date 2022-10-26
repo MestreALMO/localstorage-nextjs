@@ -6,24 +6,20 @@ const Home: NextPage = () => {
   const [state, setState] = usePersistedState("theme", "dark");
 
   useEffect(() => {
-    console.log(state);
-  }, []);
-
-  useEffect(() => {
     console.log("localstorage: " + localStorage.getItem("theme"));
   }, [state]);
 
   return (
     <>
       <h1>Hey</h1>
-      {/* <p>{state}</p>
+       <p>{state}</p>
       <button
         onClick={() => {
           state === "dark" ? setState("light") : setState("dark");
         }}
       >
         Toggle Theme
-      </button> */}
+      </button>
     </>
   );
 };
